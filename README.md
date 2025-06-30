@@ -10,9 +10,9 @@
 
 <img src="images/my_nn.png" width="600"/>
 
-This repository showcases a fully functional deep neural network **built entirely from scratch** using **NumPy**. Every component — forward/backward propagation, weight updates, activations, regularization, and optimization — is manually implemented. No high-level ML/DL libraries (like TensorFlow or PyTorch) are used.  
+This repository showcases a fully functional deep neural network **built entirely from scratch** using **NumPy**. Every component - forward/backward propagation, weight updates, activations, regularization, and optimization - is manually implemented. No high-level ML/DL libraries (like TensorFlow or PyTorch) are used.  
 
-> This project serves as a demonstration of my deep theoretical knowledge of deep learning and strong NumPy/Python coding abilities. It reflects my goal to pursue a fully-funded Master's in AI/ML and work at top AI labs or companies like Google, OpenAI, or DeepMind.
+> This project serves as a demonstration of my deep theoretical knowledge of deep learning and strong NumPy/Python coding abilities.
 
 ---
 
@@ -123,7 +123,7 @@ This section showcases the **performance, behavior, and internal workings** of t
 - **Model Structure Overview**
 - Visual explanation of forward/backward propagation paths.
 
-<img src="images/structure.png" width="600"/>
+<img src="images/structure.png" width="600" height="400"/>
 <img src="images/backprop.png" width="500"/>
 
 ---
@@ -143,7 +143,7 @@ This section showcases the **performance, behavior, and internal workings** of t
 ---
 
 ### 🔄 Optimizer Comparison
-- Effectiveness of different optimizers: **SGD**, **Momentum**, **RMSProp**, **Adam**.
+- Effectiveness of different optimizers: **GD**, **Momentum**, **RMSProp**, **Adam**.
 
 <img src="images/optimizers_comp.png" width="500"/>
 
@@ -200,14 +200,6 @@ Each image reflects a real experiment run with this framework. These visuals mak
 git clone https://github.com/nabeelshan78/deep-nn-from-scratch.git
 cd deep-nn-from-scratch
 ```
-
-## 📌 Why This Matters
-
-This project isn’t just about coding - it’s about **building true understanding** of how deep learning works under the hood. It reflects:
-- My commitment to learning AI from first principles
-- My ability to write clean, scalable, vectorized code
-
----
 
 ## 👨‍💻 Author
 
