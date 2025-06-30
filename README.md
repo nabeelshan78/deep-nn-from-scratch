@@ -1,80 +1,205 @@
-# 🧠 Deep Neural Network from Scratch (NumPy Implementation)
-
-Welcome to my hands-on implementation of a **Deep Neural Network (DNN)** built entirely **from scratch using NumPy**. This project demonstrates a solid understanding of the inner workings of neural networks — without relying on any high-level libraries like TensorFlow or PyTorch.
-
-> 📌 This repository is a key part of my deep learning journey, and reflects my commitment to mastering AI fundamentals through first-principles implementation.
-
----
-
-## 🚀 What’s Inside?
-
-This project implements a **multi-layer fully-connected neural network** with the following features:
-
-- Layer-wise forward and backward propagation
-- Vectorized computations using NumPy
-- ReLU and Sigmoid activation functions
-- Cross-entropy loss calculation
-- Gradient descent optimization
-- Modular and extensible code structure
+# 🧠 Deep Neural Network from Scratch  
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/) 
+[![NumPy](https://img.shields.io/badge/NumPy-1.24-yellow?logo=numpy&logoColor=black)](https://numpy.org/) 
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)  
+> 🔬 Built entirely using NumPy — No frameworks. 100% custom implementation.
 
 ---
 
-## 📂 Directory Structure
+## Introduction
 
-```text
+<img src="images/my_nn.png" width="600"/>
+
+This repository showcases a fully functional deep neural network **built entirely from scratch** using **NumPy**. Every component — forward/backward propagation, weight updates, activations, regularization, and optimization — is manually implemented. No high-level ML/DL libraries (like TensorFlow or PyTorch) are used.  
+
+> This project serves as a demonstration of my deep theoretical knowledge of deep learning and strong NumPy/Python coding abilities. It reflects my goal to pursue a fully-funded Master's in AI/ML and work at top AI labs or companies like Google, OpenAI, or DeepMind.
+
+---
+
+## ✅ Features
+
+- **Architecture:**
+  - Modular, multi-layer feedforward neural network
+  - Forward and Backward propagation from scratch  
+  - Dense (fully connected) layers
+
+- **Core Modules:**
+  - Activations: `Sigmoid`, `ReLU`
+  - Losses: `Binary Cross-Entropy`
+  - Optimizers: `GD`, `Momentum`, `RMSprop`, `Adam`
+  - Initializations: `Random`, `Xavier (Glorot)`, `He`, `zero`
+
+- **Training Dynamics:**
+  - Mini-batch gradient descent
+  - Dropout regularization
+  - L2 weight regularization
+
+- **Visualization & Debugging Tools:**
+  - Training loss curves, decision boundaries
+  - Optimizer/initialization/regularization comparisons
+  - Detailed architecture diagrams
+
+---
+
+## Why From Scratch?
+
+> *"If you really want to understand deep learning, implement it yourself."*
+
+Most deep learning engineers rely on high-level libraries. But building it all from scratch:
+- Forces you to master the **underlying math** (linear algebra, calculus)
+- Makes backpropagation **intuitive**, not magical
+- Prepares you to debug and optimize real models
+- Proves you understand every part of how deep networks work
+
+This project represents that journey — from pure math to working code.
+
+---
+
+## 🧩 Project Structure
+
+<pre>
+
 deep-nn-from-scratch/
 │
-├── deep_nn.ipynb       # Main notebook: builds & trains the deep neural network
-├── dnn_utils.py        # Utility module: activations, forward/backward passes, plotting
+├── datasets/                   # Training/testing datasets
+│   ├── train_catvnoncat.h5
+│   └── test_catvnoncat.h5
 │
-├── datasets/           # Contains training/test .h5 files (cat vs. non-cat)
-├── images/             # Diagrams or visualizations used in the notebook
+├── images/                     # Visualizations and architecture diagrams
+│   ├── backprop.png
+│   ├── batch_minibatches_comp.png
+│   ├── cost-vs-epoch-cat-data.png
+│   ├── dropout_comp.png
+│   ├── inits_comparision.png
+│   ├── l2_comp.png
+│   ├── learn_rates_comp.png
+│   ├── linearback.png
+│   ├── mood_data_dec_boundary.png
+│   ├── moon_data_cost_epochs.png
+│   ├── my_nn.png
+│   ├── optimizers_comp.png
+│   └── structure.png
+│
+├── model/                      # Core deep learning components
+│   ├── forward_propagation.py
+│   ├── backward_propagation.py
+│   ├── initialization.py
+│   ├── update.py
+│   ├── utils.py
+│   └── predict.py
+│
+├── demo_notebook.ipynb         # End-to-end training and visualization demo
+├── DNN_Math_And_Theory.ipynb   # Theory + derivations for NN math
+├── train.py                    # Script to run training pipeline
+└── README.md                   # This file
 
+</pre>
+
+
+
+
+---
+
+## 📘 Theoretical Notebook: `DNN_Math_And_Theory.ipynb`
+
+This notebook derives the math behind neural networks from scratch:
+- Matrix calculus for gradients
+- Backpropagation derivation
+- Layer-wise forward/backward pass
+- Activation derivatives
+- Cost function intuition
+
+> 🧠 Use this to understand **why** each line of code exists, not just what it does.
+
+---
+
+## 📸 Visual Results & Comparisons
+
+This section showcases the **performance, behavior, and internal workings** of the neural network across various techniques and experiments.
+
+---
+
+### Architecture & Gradient Flow
+- **Model Structure Overview**
+- Visual explanation of forward/backward propagation paths.
+
+<img src="images/structure.png" width="600"/>
+<img src="images/backprop.png" width="500"/>
+
+---
+
+### Training Dynamics
+                                                                                                                                                                                                  
+#### 📈 Cost vs Epochs
+- Loss curve during training on the cat vs. non-cat dataset.
+
+<img src="images/cost-vs-epoch-cat-data.png" width="500"/>
+
+#### 🚀 Learning Rate Impact
+- Comparing performance across different learning rates.
+
+<img src="images/learn_rates_comp.png" width="500"/>
+
+---
+
+### 🔄 Optimizer Comparison
+- Effectiveness of different optimizers: **SGD**, **Momentum**, **RMSProp**, **Adam**.
+
+<img src="images/optimizers_comp.png" width="500"/>
+
+---
+
+### 🎯 Weight Initialization Methods
+- Comparison between **Random**, **He**, and **Xavier/Glorot** initializations.
+
+<img src="images/inits_comparision.png" width="500"/>
+
+---
+
+### 🛡️ Regularization Techniques
+
+#### Dropout Regularization
+- Prevents overfitting by randomly disabling neurons during training.
+
+<img src="images/dropout_comp.png" width="450"/>
+
+#### L2 Regularization
+- Penalizes large weights to improve generalization.
+
+<img src="images/l2_comp.png" width="450"/>
+
+---
+
+### 🧩 Batch Strategies
+
+#### Batch vs Mini-Batch
+- Efficiency and convergence comparison between training with full batch and mini-batches.
+
+<img src="images/batch_minibatches_comp.png" width="500"/>
+
+---
+
+### 🌙 Decision Boundaries
+
+- Real-time visualizations of learned decision boundaries on synthetic data (e.g., moons).
+
+<img src="images/mood_data_dec_boundary.png" width="500"/>
+
+---
+
+
+
+Each image reflects a real experiment run with this framework. These visuals make the network’s internal learning process **transparent** and interpretable.
+
+---
+
+## 💻 Getting Started
+
+### 1. Clone this repository:
+```bash
+git clone https://github.com/nabeelshan78/deep-nn-from-scratch.git
+cd deep-nn-from-scratch
 ```
-
----
-
-## 📈 Training Summary
-
-- **Task:** Binary classification (e.g., Cat vs Non-Cat)
-- **Network Depth:** Configurable
-- **Optimized with:** Gradient Descent
-
----
-
-## DNN Architecture
-
-<img src="images/my_nn.png" alt="DNN Architecture" style="width:700px; height:400px; display:block; margin:auto;"/>
-
----
-
-## 💡 Key Concepts Practiced
-
-| Topic                        | Skills Demonstrated                       |
-|-----------------------------|-------------------------------------------|
-| Neural Networks             | Architecture, activations, forward pass  |
-| Backpropagation             | Manual gradient calculations              |
-| Visuals                     |  Plot learning curves (loss vs epochs)    |
-| NumPy                       | Efficient vectorized math                 |
-| Debugging & Modularity      | Clean, testable, reusable design          |
-
----
-
-## 🛠️ Tech Stack
-
-- **Language:** Python 3
-- **Libraries:** NumPy, Matplotlib (for visualization)
-
----
-
-## 🤖 Future Work
-
-- ⏳ Add mini-batch gradient descent
-- ⏳ Extend to multiclass classification
-- ⏳ Visualize hidden layer activations
-- ⏳  Add Regularization Techniques
-
----
 
 ## 📌 Why This Matters
 
