@@ -1,7 +1,5 @@
 # 🧠 Deep Neural Network from Scratch  
-[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/) 
-[![NumPy](https://img.shields.io/badge/NumPy-1.24-yellow?logo=numpy&logoColor=black)](https://numpy.org/) 
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)  
+ 
 > 🔬 Built entirely using NumPy — No frameworks. 100% custom implementation.
 
 ---
