@@ -1,6 +1,6 @@
 # 🧠 Deep Neural Network from Scratch  
- 
-> 🔬 Built entirely using NumPy — No frameworks. 100% custom implementation.
+
+> Built entirely using NumPy — No frameworks. 100% custom implementation.
 
 ---
 
